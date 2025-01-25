@@ -33,7 +33,11 @@ public class Queues {
         size++;
         System.out.println(name + " has been added");
         display();
+        System.out.println();
         return name+ " has been added";
+    }
+    public int getFront(){
+        return front;
     }
     public String dequeue() {
         if (isEmpty()) {
@@ -45,6 +49,7 @@ public class Queues {
         size--;
         System.out.println(removed + " has been removed.");
         display();
+        System.out.println();
         return removed + " removed successfully.";
     }
     public void display(){
