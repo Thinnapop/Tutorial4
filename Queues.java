@@ -31,7 +31,7 @@ public class Queues {
         queue[rear] = name;
         rear = (rear + 1) % capacity;
         size++;
-        System.out.println(name + " has been added");
+        System.out.println("Enqueue "+name);
         display();
         System.out.println();
         return name+ " has been added";
@@ -47,7 +47,7 @@ public class Queues {
         queue[front] = null;
         front = (front + 1) % capacity;
         size--;
-        System.out.println(removed + " has been removed.");
+        System.out.println("Dequeue "+removed);
         display();
         System.out.println();
         return removed + " removed successfully.";
