@@ -1,20 +1,35 @@
+import java.util.Scanner;
 
 public class main{
     public static void main(String[] args) {
         Queues pplQueue = new Queues(5);
-       
-        pplQueue.enqueue("John");
-        System.out.println();
+        Scanner input = new Scanner(System.in);
 
-        pplQueue.enqueue("Man");
-        System.out.println();
+        String action;
 
-        pplQueue.enqueue("Pree");
-        System.out.println();
+       do { 
+            System.out.println("Enter your action (enqueue/dequeue/exit): ");
+            action = input.next();
 
-        pplQueue.dequeue();
+            if (action.equalsIgnoreCase("exit")){
+                System.out.println("Program terminated!!");
+                break;
+            }
+            if(action.equalsIgnoreCase("enqueue")){
+            System.out.println("Enter the name to enqueue: ");
+            String en = input.next();
+            System.out.println();
+            pplQueue.enqueue(en);
+           }
+           else if (action.equalsIgnoreCase("dequeue")) {
+               System.out.println("Dequeue: "+pplQueue.dequeue());
+           }
+           else{
+            System.out.println("Invalid input!!");
+           }
+        }
+           while(!action.equalsIgnoreCase("exit"));
+        }
+    }    
 
-        System.out.println();
 
-    }
-}
